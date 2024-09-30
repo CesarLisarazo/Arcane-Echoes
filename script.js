@@ -176,10 +176,9 @@ Swal.fire({
     html:  " <br><br><br><br><br><br><span id='homeSoundOnOff' class='homeText'>Sound On / Off<br></span><button id='homeSound'>🔈</button><br><br><span class='homeText'>English / Español</span><br><button id='homeIdiom'>English</button><br><br><br>",
     confirmButtonText: "Start",
    // Fondo del modal transparente
-    width:"40vh",
- 
-  imageWidth: 400,
-  imageHeight: 55,
+   backdrop: `
+   rgba(0, 0, 0, 1)  /* Fondo negro semi-transparente */
+ `,
 
     customClass: {
         popup: 'custom-swal',  // Clase personalizada para el modal

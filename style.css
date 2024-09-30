@@ -1,0 +1,405 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ 
+}
+button, a, input,img ,h3{
+    -webkit-tap-highlight-color: transparent; /* Para Safari y Chrome */
+    outline: none; /* Elimina el contorno del foco */
+}
+
+body {
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    background-image: url('/images/fondo.jpg');    
+    background-size: cover; /* Esto hará que la imagen ocupe toda la pantalla */
+    background-position: center; /* Esto centrará la imagen */
+    height: 100%;
+    margin: 0;
+   
+    
+}
+h3, h4 {
+    color: #333;
+   
+}
+
+#grid {
+   
+        width: 48vh;
+  
+    
+
+   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:13px;
+    
+}
+
+#grid img {
+    width: 13vh;
+    height: 17vh;
+   animation: appear 1s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px #414555d5;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    
+}
+
+
+
+#grid img:active {
+    transform: scale(0.9);
+
+}
+
+#grid img:hover{
+    box-shadow: 0 2px 8px #8c95b8;
+}
+
+#score, #clicks {
+    color: #e9b036c0;
+    font-size: smaller;
+       height: 40px;
+      
+}
+
+h3, h4 {
+    color: #e9b036;
+    font-size: 20px;
+   
+
+}
+.container{
+    display: flex;
+justify-content:center;
+
+    width: 80%;
+    margin-bottom: 10px;
+ 
+}
+#frasecita{
+    margin-top: 5px;
+    animation: vanish 4s;
+    color: #b48112;
+    font-size: smaller;
+    text-align: center;
+ 
+    height: 40px;
+   
+  
+}
+#numbersContainer{
+    display: flex;
+    justify-content:center;
+    height: 50px;
+    align-items: center;
+    
+}
+#numbers{ width: 42vh;
+ 
+
+      color: #e9b036;
+ font-size: smaller;
+ align-items: center;
+    
+    display: flex;
+   justify-content:space-between;
+   
+  
+
+    padding-top: 15px;
+    overflow: hidden;
+   
+
+  
+}
+#Arcane-echoes{
+    margin-top: 1.5vh;
+   animation: vanish 1s;
+    background-image:url("images/arcane.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 42vh;
+    height: 60px;
+  
+}
+
+.tittle{
+    border: 2px solid #e9b03657;
+    border-radius: 8px;
+    width:12.5vh;
+    font-weight: lighter;
+    color: #e9b036c0;
+    font-size: small;
+    text-align: center;
+   
+    line-height: 30px;
+       animation: vanish 1s;
+       background-color:#140603d8;
+    
+       border: 1px solid #ecd8adb7;
+    box-shadow:0px 0px 4px #e9b036c0;
+       
+
+}
+
+.tittle2{
+    display: none;
+    width:none;
+
+    text-align: right;
+    color: #e9b036c0;
+    font-weight: lighter;
+    font-size: small;
+       height: 30px;
+       line-height: 30px;
+       animation: vanish 1s;
+      
+   
+}
+#homeSound{
+    all: unset;
+    display: n; 
+    font-size: 14px;
+    width: 90px;
+    height: 20px;
+    margin-top: 5px;
+    color: #bb874f;
+    padding: 5px;
+    border-radius: 6px;
+    background-color:#171e2280;
+    background-size: cover;
+background-position: center;
+box-shadow: 2px 2px 4px rgb(0, 0, 0);
+    font-family:serif;
+    text-shadow: 
+    -1px -1px 0  #e9b0368e, 
+    1px -1px 0   #e9b0368e, 
+    -1px 1px 0   #e9b0368e, 
+    1px 1px 0   #e9b0368e;
+
+    border: 1px solid #ecd8ad2d;
+ 
+   
+}
+
+
+.custom-swal{
+    width: 100vh !important;
+    height:100vh !important;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    
+ font-family:serif;
+
+        color: rgb(182, 169, 143);
+    text-shadow: 0 0px 2px  rgba(44, 15, 1, 0.952);
+  
+    background-image: url(/images/awesome2.png);
+background-size: cover;
+background-position: top;
+}
+
+.homeText{
+    font-size: 13px;
+    text-shadow: 
+        -1px -1px 0 #251a0ee1,  
+        1px -1px 0 #251a0ee1,
+        -1px 1px 0#251a0ee1,
+        1px 1px 0 #251a0ee1;
+    
+
+    color: #bb874f;
+    font-family:serif;
+}
+#homeSound:active {
+    transform: translate3d(0px, 1px, 0);}
+
+
+#homeIdiom{
+   all: unset; 
+    margin-top: 5px;
+    border-radius: 6px;
+    width: 90px;
+    padding: 5px;
+    font-size: 14px;
+    font-family:serif;
+    color: #bb874f;
+    background-color:#171e2280;
+    box-shadow: 2px 2px 4px rgb(0, 0, 0);
+    background-size: cover;
+background-position: center;    height: 20px;
+border: 1px solid #ecd8ad2d;
+ 
+}
+.swal2-popup {
+    border-radius: 0 !important; /* Elimina los bordes redondeados */
+    box-shadow: none !important; /* Elimina cualquier sombra de caja */
+}
+
+#homeIdiom:active {
+    transform: translate3d(0px, 1px, 0);}
+
+    
+
+.custom-confirm-button {
+    
+    border-radius: 6px;
+    width: 110px;
+    padding: 5px;
+    font-family:serif;
+    font-size: large;
+    color: #bb874f;
+    background-color:#171e22;
+    outline: none;  
+ 
+    background-size: cover;
+background-position: center;
+        border: 1px solid #ecd8adfd;
+box-shadow:0px 0px 4px #e9b036c0;
+
+       
+    }
+
+    .custom-confirm-button:active {
+    transform: translate3d(1px, 1px, 0);
+    }
+    .custom-confirm-button:focus {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+
+
+.tittle3{
+
+    position: relative;
+    text-align: center;
+    
+    border-radius: 9px;
+
+    width:6vh;
+    color: #e9b036c0;
+ 
+    font-weight: lighter;
+    font-size: small;
+    line-height: 30px;  /* Igual al alto del div */
+    animation: vanish 1s;
+    cursor: pointer;
+    
+    background-color:#140603d8;
+    
+   border: 1px solid #ecd8adb7;
+box-shadow:0px 0px 4px #e9b036c0;
+text-shadow: 
+0.7px 0.7px 0  #e9b03679, 
+-0.7px -0.7px 0  #e9b03679, 
+0.7px -0.7px 0  #e9b03679,
+-0.7px 0.7px 0  #e9b03679;
+}
+
+
+
+#reloadGame{
+    position: relative;
+    text-align: center;
+    
+    border-radius: 9px;
+
+    width:6vh;
+    color: #e9b036c0;
+ padding-top: 2px;
+ align-items: center; 
+    font-size: 16px;
+  
+    line-height: 30px;  /* Igual al alto del div */
+    animation: vanish 1s;
+    cursor: pointer;
+    
+    background-color:#140603d8;
+    
+   border: 1px solid #ecd8adb7;
+box-shadow:0px 0px 4px #e9b036c0;
+}
+#reloadGame:active {
+    color:  #ecd8adb7;
+    text-shadow: 1px 1px 5px  #ecd8adb7;}
+
+
+#toogleIdiom{
+    font-family:serif;
+    width:12.5vh;
+    text-align: center;
+    border: 2px solid #e9b03657;
+    border-radius: 9px;
+
+    background-color: transparent;
+    color: #e9b036c0;
+    font-weight: lighter;
+    font-size: small;
+
+       line-height: 30px;
+       animation: vanish 1s;
+       background-color:#140603d8;
+    
+       border: 1px solid #ecd8adb7;
+    box-shadow:0px 0px 4px #e9b036c0;
+ 
+}
+@keyframes appear{ 
+0%{ opacity: 0.3; scale: 0.5;}
+100%{opacity: 1; scale:1;
+
+}}
+
+
+.end-swal{
+    background-image:url('/images/background.jpeg');
+    background-position: center;
+    border: 2px solid  #b38013e7;
+
+}
+.end-swal-button{
+    background-color:#293339ec;
+    color: #d1c29d;
+    font-family: serif;
+}
+
+.end-swal-button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+@keyframes vanish{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes Colorvanish{
+    0%{
+        color: transparent;
+    }
+    100%{
+        color: #e9b036c0;
+    }
+}
+
+.custom-tittle{
+   
+
+    text-shadow: 0px 1px 2px #855e09dc;
+}

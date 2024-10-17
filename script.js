@@ -145,7 +145,7 @@ let clickSound=document.getElementById('click-sound');
 let background= document.getElementById("background")
 cardArray.sort(() => 0.5 - Math.random());
 let numbers= document.getElementById("numbers")
-let match2=document.getElementById('match2')
+
 let frase= document.getElementById('frasecita')
 const gridDisplay = document.getElementById('grid');
 let score = document.getElementById('score');
@@ -166,19 +166,15 @@ gridSound.muted = true;
 clickSound.muted = true;
 final.muted = true;
 match.muted = true;
-match2.muted=true;
 let reloadGame=document.getElementById("reloadGame")
 reloadGame.addEventListener("click",clearDisplay)
-
-  
 Swal.fire({
   
-    html:  " <br><br><br><br><br><br><span id='homeSoundOnOff' class='homeText'>Sound On / Off<br></span><button id='homeSound'>🔈</button><br><br><span class='homeText'>English / Español</span><br><button id='homeIdiom'>English</button><br><br><br>",
+    html:  " <br><br><br><br><br><br><span id='homeSoundOnOff' class='homeText'>Sound Off / On<br></span><button id='homeSound'>🔊</button><br><br><span class='homeText'>English / Español</span><br><button id='homeIdiom'>English</button><br><br><br>",
     confirmButtonText: "Start",
    // Fondo del modal transparente
-   backdrop: `
-   rgba(0, 0, 0, 1)  /* Fondo negro semi-transparente */
- `,
+  backdrop: ` rgba(0, 0, 0, 1)`,
+
 
     customClass: {
         popup: 'custom-swal',  // Clase personalizada para el modal
@@ -186,29 +182,20 @@ Swal.fire({
     },
     allowOutsideClick: false
 }).then(() => {
+       const docElement = document.documentElement;
 
-
-    
-        if (document.documentElement.requestFullscreen) {
-          document.documentElement.requestFullscreen();
-        } else if (document.documentElement.webkitRequestFullscreen) {
-          document.documentElement.webkitRequestFullscreen(); // Para Safari y Chrome en iOS
-        } else if (document.documentElement.msRequestFullscreen) {
-          document.documentElement.msRequestFullscreen(); // Para IE/Edge
-        }
-      
-
-
-
-
+    if (docElement.requestFullscreen) {
+      docElement.requestFullscreen();
+    } else if (docElement.webkitRequestFullscreen) {
+      docElement.webkitRequestFullscreen(); // Para Safari y Chrome en iOS
+    } else if (docElement.msRequestFullscreen) {
+      docElement.msRequestFullscreen(); // Para IE/Edge
+    }
     createBoard();
 });
-
-
-
 frase.style.display="none"
 
-   console.log(document)
+   
 
 let homeStart= document.querySelector('.custom-confirm-button')
 let homeSoundOnOff= document.getElementById('homeSoundOnOff')
@@ -224,8 +211,8 @@ let toogleHome=document.getElementById("homeIdiom")
 
 toogleHome.addEventListener("click",toogleHomeChange)
 function toogleHomeChange(){
-    match2.currentTime=0;
-    match2.play()
+    match.currentTime=0;
+    match.play()
     if(toogleHome.innerHTML=="English"){
         toogleHome.innerHTML="Español"
         homeSoundOnOff.innerHTML='Sonido Si / No<br>'
@@ -247,8 +234,8 @@ toogle.innerHTML= toogleHome.innerHTML
 
 
 function toogleChange(){
-    match2.currentTime=0;
-    match2.play()
+      match.currentTime=0;
+    match.play()
   if(toogle.innerHTML=="English" ){
     toogle.innerHTML="Español" 
     frase.innerHTML=frasesEsp[numeroRandom]
@@ -265,7 +252,7 @@ setTimeout(() => {
     frase.style.animation = "none"; // Reinicia la animación
 setTimeout(() => {
     frase.style.animation = "vanish 3s"; // Aplica la animación
-}, 1);
+}, 0);
   
   }
       
@@ -277,12 +264,12 @@ setTimeout(() => {
 
 
 function homeChange(){
-    if(homeSound.innerHTML=="🔈"){
-        homeSound.innerHTML="🔊";
+    if(homeSound.innerHTML=="🔊"){
+        homeSound.innerHTML="🔈";
         soundOnOff()
     }
     else{
-        homeSound.innerHTML="🔈"
+        homeSound.innerHTML="🔊"
         soundOnOff()
 
     }
@@ -294,43 +281,35 @@ sound.addEventListener("click", soundOnOff)
  function soundOnOff(){
 
   
-    if(sound.innerHTML=="🔈"){
+    if(sound.innerHTML=="🔊"){
     
-        sound.innerHTML="🔊";
+        sound.innerHTML="🔈";
         background.play()
         background.muted = false;
         gridSound.muted = false;
         clickSound.muted = false;
         final.muted = false;
         match.muted = false;
-        match2.muted=false
 
      
       
     }
     else{
-        sound.innerHTML="🔈" 
+        sound.innerHTML="🔊" 
         background.muted = true;
         gridSound.muted = true;
         clickSound.muted = true;
         final.muted = true;
         match.muted = true;
-        match2.muted=true;
     }
  }
 
   function createBoard() {
-    frase.style.animation = "none"; // Reinicia la animación
-    setTimeout(() => {
-        frase.style.animation = "vanish 3s"; // Aplica la animación
-    }, 1);
   
     if(toogle.innerHTML=='English'){
         
     frase.innerHTML=frases[numeroRandom];}
     else{
-
-
         frase.innerHTML=frasesEsp[numeroRandom];   
     }
     gridSound.play()
@@ -808,19 +787,19 @@ function clearDisplay(){
 
  frase.innerHTML=frases[numeroRandom]
  frase.style.animation = "none"; // Reinicia la animación
-
+setTimeout(() => {
     frase.style.animation = "vanish 5s"; // Aplica la animación
-
+}, 10); // Pequeño retardo para permitir el reinicio
    cardsWon = [];
-
-   cardsChosen = [];
-cardsChosenIds = [];
-
     createBoard();
 
 
 
 }
+
+
+
+
 
 
 

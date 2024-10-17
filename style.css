@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
- 
 }
 button, a, input,img ,h3{
     -webkit-tap-highlight-color: transparent; /* Para Safari y Chrome */
@@ -15,15 +14,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  
-    background-image: url('/images/fondaso.png');    
-    background-size:cover; 
-    background-position: top; 
-
-    height: 100%;
-    width: 100%;
-    margin: 0;
-   
+    height: 100vh;
+    background-image: url('/images/fondo.jpg');    background-size: cover; /* Esto hará que la imagen ocupe toda la pantalla */
+    background-position: center; /* Esto centrará la imagen */
     
 }
 h3, h4 {
@@ -125,7 +118,6 @@ justify-content:center;
   
 }
 #Arcane-echoes{
-    margin-top: 1.5vh;
    animation: vanish 1s;
     background-image:url("images/arcane.png");
     background-size: contain;
@@ -188,20 +180,21 @@ box-shadow: 2px 2px 4px rgb(0, 0, 0);
     1px -1px 0   #e9b0368e, 
     -1px 1px 0   #e9b0368e, 
     1px 1px 0   #e9b0368e;
+    border: 1px solid  #b3801393;
 
-    border: 1px solid #ecd8ad2d;
- 
+   
    
 }
 
 
 .custom-swal{
-    width: 100vh !important;
-    height:100vh !important;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
+    width: 100vw !important; 
+    height: 100vh !important;
+    max-width: 100vw !important; 
+    max-height: 100vh !important;
+    padding: 0 !important;
+    margin: 0 !important;
+ 
     
  font-family:serif;
 
@@ -209,8 +202,11 @@ box-shadow: 2px 2px 4px rgb(0, 0, 0);
     text-shadow: 0 0px 2px  rgba(44, 15, 1, 0.952);
   
     background-image: url(/images/awesome2.png);
-background-size: cover;
-background-position: top;
+background-size:cover;
+background-position: center;
+
+
+
 }
 
 .homeText{
@@ -222,7 +218,7 @@ background-position: top;
         1px 1px 0 #251a0ee1;
     
 
-    color: #bb874f;
+    color: #d49755;
     font-family:serif;
 }
 #homeSound:active {
@@ -242,13 +238,10 @@ background-position: top;
     box-shadow: 2px 2px 4px rgb(0, 0, 0);
     background-size: cover;
 background-position: center;    height: 20px;
-border: 1px solid #ecd8ad2d;
+border: 1px solid  #b3801393;
  
 }
-.swal2-popup {
-    border-radius: 0 !important; /* Elimina los bordes redondeados */
-    box-shadow: none !important; /* Elimina cualquier sombra de caja */
-}
+
 
 #homeIdiom:active {
     transform: translate3d(0px, 1px, 0);}
@@ -404,13 +397,4 @@ box-shadow:0px 0px 4px #e9b036c0;
    
 
     text-shadow: 0px 1px 2px #855e09dc;
-}
-
-
-@media  (max-width:700px) {
-
-    body{
-
-        background-image: url('images/fondo.jpg');   
-    }
 }
